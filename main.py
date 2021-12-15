@@ -81,13 +81,14 @@ def draw_graphs(a, b, res, h, lbl):
     plt.grid()
     plt.show()
     plt.title('Error')
-    plt.plot(xi, abs(res - sol[1]))
+    plt.plot(xi, abs(res - sol[1]), label='Error graph ' + lbl)
+    plt.legend()
+    plt.grid()
+    plt.show()
     sum = 0
     for i in range(len(res)):
         sum += np.std([res[i], sol[1][i]])
     print('err = ', sum)
-    plt.grid()
-    plt.show()
 
 
 x0, xn = 0, 1
